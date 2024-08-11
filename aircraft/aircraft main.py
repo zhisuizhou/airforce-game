@@ -5,9 +5,9 @@ screen_y = 1000
 screen = pygame.display.set_mode((screen_x,screen_y))
 
 # 从硬盘导入图片
-airforce_surface = pygame.image.load("C:/Users/zzs/OneDrive/zzs/Python zzs/Module/pygame/aircraft/airforce.png").convert_alpha()
-enemy_surface = pygame.image.load("C:/Users/zzs/OneDrive/zzs/Python zzs/Module/pygame/aircraft/enemy.png").convert_alpha()
-bullet_surface = pygame.image.load("C:/Users/zzs/OneDrive/zzs/Python zzs/Module/pygame/aircraft/bullet.png").convert_alpha()
+airforce_surface = pygame.image.load("./airforce.png").convert_alpha()
+enemy_surface = pygame.image.load("./enemy.png").convert_alpha()
+bullet_surface = pygame.image.load("./bullet.png").convert_alpha()
 
 # 获取图片的尺寸
 airforce_size = airforce_surface.get_size()
@@ -72,13 +72,13 @@ airforce_number = 5
 shoot_new_bullet = True
 wait_time = 0
 
-bullet_sound = pygame.mixer.Sound("C:/Users/zzs/OneDrive/zzs/Python zzs/Module/pygame/aircraft/sound/bullet.wav")
+bullet_sound = pygame.mixer.Sound("./sound/bullet.wav")
 bullet_sound.set_volume(0.02)
-game_over_sound = pygame.mixer.Sound("C:/Users/zzs/OneDrive/zzs/Python zzs/Module/pygame/aircraft/sound/Game Over.wav")
+game_over_sound = pygame.mixer.Sound("./sound/Game Over.wav")
 game_over_sound.set_volume(0.05)
-short_bomb_sound = pygame.mixer.Sound("C:/Users/zzs/OneDrive/zzs/Python zzs/Module/pygame/aircraft/sound/short_bomb.wav")
+short_bomb_sound = pygame.mixer.Sound("./sound/short_bomb.wav")
 short_bomb_sound.set_volume(0.05)
-start_sound = pygame.mixer.Sound("C:/Users/zzs/OneDrive/zzs/Python zzs/Module/pygame/aircraft/sound/start.wav")
+start_sound = pygame.mixer.Sound("./sound/start.wav")
 start_sound.set_volume(0.2)
 
 
@@ -94,17 +94,17 @@ while running:
                 pygame.time.wait(300)
                 running = False
     screen.fill(pygame.Color("black"))
-    start_font = pygame.font.Font("./Module/pygame/aircraft/msyhl.ttc",100)
+    start_font = pygame.font.Font("./msyhl.ttc",100)
     start_image = start_font.render("开始游戏", True, white)
     screen.blit(start_image, (screen_x/2 - 200, screen_y/3 - 50))
 
-    start_font = pygame.font.Font("./Module/pygame/aircraft/msyhl.ttc",50)
+    start_font = pygame.font.Font("./msyhl.ttc",50)
     start_image = start_font.render("上下左右:↑↓←→ 或 WSAD 控制飞机", True, white)
     screen.blit(start_image, (screen_x/2 - 380, screen_y/2))
-    start_font = pygame.font.Font("./Module/pygame/aircraft/msyhl.ttc",50)
+    start_font = pygame.font.Font("./msyhl.ttc",50)
     start_image = start_font.render("按enter开始", True, white)
     screen.blit(start_image, (screen_x/2 - 130, screen_y/2 + 50))
-    name_font = pygame.font.Font("./Module/pygame/aircraft/msyhl.ttc",30)
+    name_font = pygame.font.Font("./msyhl.ttc",30)
     name_image = name_font.render("by zhisuizhou", True, white)
     screen.blit(name_image, (screen_x/2 - 100, screen_y - 50))
 
@@ -266,15 +266,15 @@ while running:
                         a = 0
                         running = True
             screen.fill(pygame.Color("black"))
-            over_font = pygame.font.Font("./Module/pygame/aircraft/msyhl.ttc",100)
+            over_font = pygame.font.Font("./msyhl.ttc",100)
             over_image = over_font.render("Game Over", True, (255,255,255))
             screen.blit(over_image, (screen_x/2 - 250, screen_y/3 - 50))
 
-            over_font1 = pygame.font.Font("./Module/pygame/aircraft/msyhl.ttc",50)
+            over_font1 = pygame.font.Font("./msyhl.ttc",50)
             over_image1 = over_font1.render("按space重来", True, (255,255,255))
             screen.blit(over_image1, (screen_x/2 - 150, screen_y/2))
 
-            over_font1 = pygame.font.Font("./Module/pygame/aircraft/msyhl.ttc",50)
+            over_font1 = pygame.font.Font("./msyhl.ttc",50)
             over_image1 = over_font1.render("击落敌机:" + str(destroyed_enemy_number), True, (255,255,255))
             screen.blit(over_image1, (screen_x/2 - 150, screen_y/2 + 100))
 
